@@ -1,0 +1,280 @@
+# Source Schemas
+schemas: 
+  display: 
+    columns:
+      - "Date"
+      - "Market"
+      - "Target"
+      - "Channel"
+      - "Audience"
+      - "Cost"
+      - "Impressions"
+      - "Clicks"
+      - "Conversions"
+      - "Revenue"
+    date_column: 'Date'
+    column_types:
+      Date: Date
+      Market: character
+      Target: character
+      Channel: character
+      Audience: character
+      Cost: numeric
+      Impressions: integer
+      Clicks: integer
+      Conversions: integer
+      Revenue: logical
+    transform:
+      clean:
+        enabled: true
+        clean_columns:
+          Revenue:
+            type: numeric
+      pivot:
+        enabled: false
+  facebook: 
+    columns:
+      - "day" 
+      - "Target" 
+      - "Channel" 
+      - "Audience" 
+      - "kpi" 
+      - "value"
+    date_column: 'day'
+    column_types:
+      day: Date
+      Target: character
+      Channel: character
+      Audience: character
+      kpi: character
+      value: numeric
+    transform:
+      clean:
+        enabled: true
+        rename_columns:
+          old_name:
+            - day 
+          new_name:
+            - Date
+        clean_columns:
+          Clicks:
+            type: integer
+          Conversions:
+            type: integer
+          Impressions:
+            type: integer
+          Revenue:
+            type: numeric
+      pivot:
+        enabled: true
+        index:
+          - "day"
+          - "Target"
+          - "Channel"
+          - "Audience"
+        column: "kpi"
+        values: "value"
+        kpi_mapping:
+          - Cost
+          - Impressions
+          - Clicks
+          - Conversions
+          - Revenue
+  native: 
+    columns:
+      - "Date"
+      - "Market"
+      - "Target"
+      - "Channel"
+      - "Audience"
+      - "Cost"
+      - "Impressions"
+      - "Clicks" 
+      - "Conversions" 
+      - "Revenue"
+    date_column: 'Date'
+    column_types:
+      Date: Date
+      Market: character
+      Target: character
+      Channel: character
+      Audience: character
+      Cost: numeric
+      Impressions: integer
+      Clicks: integer
+      Conversions: integer
+      Revenue: logical
+    transform:
+      clean:
+        enabled: true
+        clean_columns:
+          Revenue:
+            type: numeric
+      pivot:
+        enabled: false
+  snapchat: 
+    columns:
+      - "Date"
+      - "Market"
+      - "Target"
+      - "Channel"
+      - "Audience"
+      - "Cost"
+      - "Impressions"
+      - "Clicks" 
+      - "Conversions" 
+      - "Revenue"
+    date_column: 'Date'
+    column_types:
+      Date: Date
+      Market: character
+      Target: character
+      Channel: character
+      Audience: character
+      Cost: numeric
+      Impressions: integer
+      Clicks: integer
+      Conversions: integer
+      Revenue: logical
+    transform:
+      clean:
+        enabled: true
+        clean_columns:
+          Revenue:
+            type: numeric
+      pivot:
+        enabled: false
+  spotify: 
+    columns:
+      - "Date"
+      - "Target"
+      - "Channel"
+      - "Audience"
+      - "Cost"
+      - "Impressions"
+      - "Clicks" 
+      - "Conversions" 
+      - "Revenue"
+    date_column: 'Date'
+    column_types:
+      Date: Date
+      Target: character
+      Channel: character
+      Audience: character
+      Cost: character
+      Impressions: character
+      Clicks: integer
+      Conversions: integer
+      Revenue: logical
+    transform:
+      clean:
+        enabled: true
+        clean_columns:
+          Cost:
+            type: numeric
+            remove_character: '$'
+          Impressions:
+            type: integer
+            remove_character: ','
+          Revenue:
+            type: numeric
+      pivot:
+        enabled: false
+  tiktok: 
+    columns:
+      - "Date"
+      - "Market"
+      - "Target"
+      - "Channel"
+      - "Audience"
+      - "Cost"
+      - "Impressions"
+      - "Clicks" 
+      - "Conversions" 
+      - "Revenue"
+    date_column: 'Date'
+    column_types:
+      Date: Date
+      Market: character
+      Target: character
+      Channel: character
+      Audience: character
+      Cost: numeric
+      Impressions: integer
+      Clicks: integer
+      Conversions: integer
+      Revenue: logical
+    transform:
+      clean:
+        enabled: true
+        clean_columns:
+          Revenue:
+            type: numeric
+      pivot:
+        enabled: false
+  twitter: 
+    columns:
+      - "Date"
+      - "Market"
+      - "Target"
+      - "Channel"
+      - "Audience"
+      - "Cost"
+      - "Impressions"
+      - "Clicks" 
+      - "Conversions" 
+      - "Revenue"
+    date_column: 'Date'
+    column_types:
+      Date: Date
+      Market: character
+      Target: character
+      Channel: character
+      Audience: character
+      Cost: numeric
+      Impressions: integer
+      Clicks: integer
+      Conversions: integer
+      Revenue: logical
+    transform:
+      clean:
+        enabled: true
+        clean_columns:
+          Revenue:
+            type: numeric
+      pivot:
+        enabled: false
+  youtube: 
+    columns:
+      - "Date"
+      - "Market"
+      - "Target"
+      - "Channel"
+      - "Audience"
+      - "Cost"
+      - "Impressions"
+      - "Clicks" 
+      - "Conversions" 
+      - "Revenue"
+    date_column: 'Date'
+    column_types:
+      Date: Date
+      Market: character
+      Target: character
+      Channel: character
+      Audience: character
+      Cost: numeric
+      Impressions: integer
+      Clicks: integer
+      Conversions: integer
+      Revenue: logical
+    transform:
+      clean:
+        enabled: true
+        clean_columns:
+          Revenue:
+            type: numeric
+      pivot:
+        enabled: false
+
+

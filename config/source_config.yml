@@ -1,0 +1,25 @@
+sources: 
+  display: 
+    source_type: 'file_csv'
+    path: "./data/raw/display.csv"
+  facebook: 
+    source_type: 'file_csv'
+    path: "./data/raw/facebook.csv"
+  native: 
+    source_type: 'file_csv'
+    path: "./data/raw/native.csv"
+  snapchat: 
+    source_type: 'file_csv'
+    path: "./data/raw/snapchat.csv"
+  spotify: 
+    source_type: 'file_csv'
+    path: "./data/raw/spotify.csv"
+  tiktok: 
+    source_type: 'file_csv'
+    path: "./data/raw/tiktok.csv"
+  twitter: 
+    source_type: 'file_csv'
+    path: "./data/raw/twitter.csv"
+  youtube: 
+    source_type: 'file_csv'
+    path: "./data/raw/youtube.csv"

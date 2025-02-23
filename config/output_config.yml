@@ -1,0 +1,25 @@
+validation:
+  column_types:
+    Date: Date
+    Market: character
+    Target: character
+    Channel: character
+    Audience: character
+    Cost: numeric
+    Impressions: integer
+    Clicks: integer
+    Conversions: integer
+    Revenue: numeric
+    
+output_paths:
+  final_dataset: "./data/processed/final_dataset/final_data.csv"
+  reports:
+    channel_performance: "./data/processed/reports/performance_by_channel.csv"
+    weekly_performance: "./data/processed/reports/performance_by_week.csv"
+  charts:
+    cost_over_time: "./charts/cost_over_time.png"
+    conversions_per_channel: "./charts/conversions_per_channel.png"
+    cost_vs_conversions: "./charts/cost_per_conversions.png"
+    average_daily_conversions: "./charts/average_daily_conversions_DoW.png"
+    conversions_by_audience: "./charts/conversions_by_audience.png"
+

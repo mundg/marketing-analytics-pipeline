@@ -1,0 +1,2 @@
+logging:
+  source_log_path: "./logs/last_processed_dates.json"
